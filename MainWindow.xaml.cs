@@ -28,13 +28,16 @@ namespace Years
         private void Calculate_Click(object sender, RoutedEventArgs e)
         {
             DateTime birthDate = (DateTime)BirthDate.SelectedDate;
-            AmountTime(birthDate);
-        }
-        private void AmountTime(DateTime birthDate)
-        {
             DateTime today = DateTime.Today;
-            
-            if((today.Month - birthDate.Month)<0)
+            AmountTime(birthDate, today);
+            DayWeek(birthDate, today);
+            LeapYears(birthDate, today);
+        }
+        private void AmountTime(DateTime birthDate, DateTime today)
+        {
+
+
+            if ((today.Month - birthDate.Month)<0)
             {
                 AmountMonths.Text = ((today.Month - birthDate.Month) + 12).ToString();
                 AmountYears.Text = ((today.Year - birthDate.Year) - 1).ToString();
@@ -46,12 +49,48 @@ namespace Years
             }
             if(today.Day - birthDate.Day < 0)
             {
-                AmountDays.Text = (today.Day - birthDate.Day + DateTime.DaysInMonth(today.Year, today.Month-1)).ToString();
+                if(today.Month == 1)
+                {
+                    AmountDays.Text = (today.Day - birthDate.Day + DateTime.DaysInMonth(today.Year, 12)).ToString();
+                }
+                else
+                {
+                    AmountDays.Text = (today.Day - birthDate.Day + DateTime.DaysInMonth(today.Year, today.Month - 1)).ToString();
+                }
             }
             else
             {
                 AmountDays.Text = (today.Day - birthDate.Day).ToString();
             }
+        }
+        private void DayWeek(DateTime birthDate, DateTime today)
+        {
+            WeekDay.Text = birthDate.DayOfWeek.ToString();
+            int amountWeekDays = 0;
+            for(int i = birthDate.Year; i <= today.Year;i++)
+            {
+                DateTime time = new DateTime(i, birthDate.Month, birthDate.Day);
+                if(time.DayOfWeek == birthDate.DayOfWeek)
+                {
+                    amountWeekDays++;
+                }
+            }
+            AmountWeekDays.Text = amountWeekDays.ToString();
+        }
+        private void LeapYears(DateTime birthDate, DateTime today)
+        {
+            int amountLeapYears = 0;
+            List<int> years = new List<int>();
+            for (int i = birthDate.Year; i <= today.Year; i++)
+            {
+                if (DateTime.IsLeapYear(i) == true)
+                {
+                    amountLeapYears++;
+                    years.Add(i);
+                }
+            }
+            AmountLeaps.Text = amountLeapYears.ToString();
+            Leaps.ItemsSource = years;
         }
     }
 }

@@ -34,11 +34,11 @@
         </StackPanel>
         <StackPanel Orientation="Vertical" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal">
-                <TextBlock HorizontalAlignment="Center">День недели</TextBlock>
+                <TextBlock HorizontalAlignment="Center" Margin="0,0,10,0">День недели</TextBlock>
                 <TextBlock Name="WeekDay"></TextBlock>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock>Количество дней, когда день рождения был в этот же день недели</TextBlock>
+                <TextBlock Margin="0,0,10,0">Количество дней, когда день рождения был в этот же день недели</TextBlock>
                 <TextBlock Name="AmountWeekDays"></TextBlock>
             </StackPanel>
         </StackPanel>
@@ -49,7 +49,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock>Високосные года</TextBlock>
-                <TextBlock Name="Leaps"></TextBlock>
+                <ListBox Name="Leaps"></ListBox>
             </StackPanel>
         </StackPanel>
     </Grid>
