@@ -1,0 +1,56 @@
+﻿<Window x:Class="Years.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Years"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock FontWeight="Bold" Margin="0,0,10,0">Введите свою дату рождения</TextBlock>
+            <DatePicker Width="150" Name="BirthDate"></DatePicker>
+            <Button Margin="10,0,0,0" Name="Calculate" Click="Calculate_Click">Скалькулировать</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock  Margin="0,0,10,0">Количество лет</TextBlock>
+                <TextBlock Name="AmountYears"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="0,0,10,0">Количество месяцев</TextBlock>
+                <TextBlock Name="AmountMonths"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="0,0,10,0">Количество дней</TextBlock>
+                <TextBlock Name="AmountDays"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock HorizontalAlignment="Center">День недели</TextBlock>
+                <TextBlock Name="WeekDay"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>Количество дней, когда день рождения был в этот же день недели</TextBlock>
+                <TextBlock Name="AmountWeekDays"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock HorizontalAlignment="Center">Количество високосных лет</TextBlock>
+                <TextBlock Name="AmountLeaps"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>Високосные года</TextBlock>
+                <TextBlock Name="Leaps"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
