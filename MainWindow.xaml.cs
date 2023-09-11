@@ -24,14 +24,24 @@ namespace Years
         {
             InitializeComponent();
         }
-
+        private void ClickOnDate(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show("Вводимый формат даты ДД.ММ.ГГГГ");
+        }
         private void Calculate_Click(object sender, RoutedEventArgs e)
         {
-            DateTime birthDate = (DateTime)BirthDate.SelectedDate;
-            DateTime today = DateTime.Today;
-            AmountTime(birthDate, today);
-            DayWeek(birthDate, today);
-            LeapYears(birthDate, today);
+            try
+            {
+                DateTime birthDate = (DateTime)BirthDate.SelectedDate;
+                DateTime today = DateTime.Today;
+                AmountTime(birthDate, today);
+                DayWeek(birthDate, today);
+                LeapYears(birthDate, today);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\nВведите корректную дату");
+            }
         }
         private void AmountTime(DateTime birthDate, DateTime today)
         {
