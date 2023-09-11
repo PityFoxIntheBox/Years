@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,7 +76,7 @@ namespace Years
         }
         private void DayWeek(DateTime birthDate, DateTime today)
         {
-            WeekDay.Text = birthDate.DayOfWeek.ToString();
+            WeekDay.Text = birthDate.ToString("dddd");
             int amountWeekDays = 0;
             for(int i = birthDate.Year; i <= today.Year;i++)
             {
