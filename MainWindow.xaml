@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Years"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="LightYellow">
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -14,31 +14,31 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock FontWeight="Bold" Margin="0,0,10,0">Введите свою дату рождения</TextBlock>
+            <TextBlock FontWeight="Bold">Введите свою дату рождения</TextBlock>
             <DatePicker Width="150" Name="BirthDate" MouseLeftButtonDown="ClickOnDate"></DatePicker>
-            <Button Margin="10,0,0,0" Name="Calculate" Click="Calculate_Click">Скалькулировать</Button>
+            <Button  Name="Calculate" Click="Calculate_Click">Скалькулировать</Button>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal">
-                <TextBlock  Margin="0,0,10,0">Количество лет</TextBlock>
+                <TextBlock  >Количество лет</TextBlock>
                 <TextBlock Name="AmountYears"></TextBlock>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Margin="0,0,10,0">Количество месяцев</TextBlock>
+                <TextBlock >Количество месяцев</TextBlock>
                 <TextBlock Name="AmountMonths"></TextBlock>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Margin="0,0,10,0">Количество дней</TextBlock>
+                <TextBlock >Количество дней</TextBlock>
                 <TextBlock Name="AmountDays"></TextBlock>
             </StackPanel>
         </StackPanel>
         <StackPanel Orientation="Vertical" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal">
-                <TextBlock HorizontalAlignment="Center" Margin="0,0,10,0">День недели</TextBlock>
+                <TextBlock HorizontalAlignment="Center" >День недели</TextBlock>
                 <TextBlock Name="WeekDay"></TextBlock>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Margin="0,0,10,0">Количество дней, когда день рождения был в этот же день недели</TextBlock>
+                <TextBlock >Количество дней, когда день рождения был в этот же день недели</TextBlock>
                 <TextBlock Name="AmountWeekDays"></TextBlock>
             </StackPanel>
         </StackPanel>

@@ -4,6 +4,15 @@
              xmlns:local="clr-namespace:Years"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="SandyBrown"/>
+            <Setter Property="Margin" Value="10,0,0,0"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontStyle" Value="Italic"/>
+            <Setter Property="Margin" Value="0,0,10,0"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        
     </Application.Resources>
 </Application>
