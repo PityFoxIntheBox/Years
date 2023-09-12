@@ -13,44 +13,53 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock FontWeight="Bold">Введите свою дату рождения</TextBlock>
-            <DatePicker Width="150" Name="BirthDate" MouseLeftButtonDown="ClickOnDate"></DatePicker>
-            <Button  Name="Calculate" Click="Calculate_Click">Скалькулировать</Button>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <TextBlock FontWeight="Bold" Style="{StaticResource TextBlockStyle}">Введите свою дату рождения</TextBlock>
+            <DatePicker Width="150" Name="BirthDate" MouseLeftButtonDown="ClickOnDate" Style="{StaticResource DatePickerStyle}"></DatePicker>
+            <Button  Name="Calculate" Click="Calculate_Click" Style="{StaticResource ButtonStyle}">Скалькулировать</Button>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal">
-                <TextBlock  >Количество лет</TextBlock>
-                <TextBlock Name="AmountYears"></TextBlock>
+                <TextBlock Style="{StaticResource TextBlockStyle}" >Количество лет</TextBlock>
+                <TextBlock Name="AmountYears" Style="{StaticResource TextBlockStyle}"></TextBlock>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock >Количество месяцев</TextBlock>
-                <TextBlock Name="AmountMonths"></TextBlock>
+                <TextBlock Style="{StaticResource TextBlockStyle}">Количество месяцев</TextBlock>
+                <TextBlock Name="AmountMonths" Style="{StaticResource TextBlockStyle}"></TextBlock>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock >Количество дней</TextBlock>
-                <TextBlock Name="AmountDays"></TextBlock>
+                <TextBlock Style="{StaticResource TextBlockStyle}">Количество дней</TextBlock>
+                <TextBlock Name="AmountDays" Style="{StaticResource TextBlockStyle}"></TextBlock>
             </StackPanel>
         </StackPanel>
         <StackPanel Orientation="Vertical" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal">
-                <TextBlock HorizontalAlignment="Center" >День недели</TextBlock>
-                <TextBlock Name="WeekDay"></TextBlock>
+                <TextBlock HorizontalAlignment="Center" Style="{StaticResource TextBlockStyle}">День недели</TextBlock>
+                <TextBlock Name="WeekDay" Style="{StaticResource TextBlockStyle}"></TextBlock>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock >Количество дней, когда день рождения был в этот же день недели</TextBlock>
-                <TextBlock Name="AmountWeekDays"></TextBlock>
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock Style="{StaticResource TextBlockStyle}">Количество дней, когда день рождения был в этот же день недели</TextBlock>
+                <TextBlock Style="{StaticResource TextBlockStyle}" Name="AmountWeekDays"></TextBlock>
             </StackPanel>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock HorizontalAlignment="Center">Количество високосных лет</TextBlock>
-                <TextBlock Name="AmountLeaps"></TextBlock>
+        <StackPanel Orientation="Vertical" Grid.Row="3" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="80,0,0,0">
+                <TextBlock Style="{StaticResource TextBlockStyle}" HorizontalAlignment="Center">Количество високосных лет</TextBlock>
+                <TextBlock Style="{StaticResource TextBlockStyle}" Name="AmountLeaps"></TextBlock>
+                <TextBlock HorizontalAlignment="Right" Margin="100,0,0,0" Name="CalendarResult"></TextBlock>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock>Високосные года</TextBlock>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="80,0,0,0">
+                <TextBlock Style="{StaticResource TextBlockStyle}">Високосные года</TextBlock>
                 <ListBox Name="Leaps"></ListBox>
             </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Name="Calendar" Visibility="Collapsed">
+                <TextBlock FontSize="20" FontStyle="Italic" Margin="0,0,5,0">Хотите ли знать кто вы по</TextBlock>
+                <Button Background="SandyBrown" FontSize="20" FontStyle="Italic" Name="East">восточному</Button>
+                <TextBlock FontSize="20" FontStyle="Italic" Margin="5,0,5,0">или</TextBlock>
+                <Button Background="SandyBrown" FontSize="20" FontStyle="Italic" Name="Slav">древнеславянскому</Button>
+                <TextBlock FontSize="20" FontStyle="Italic" Margin="5,0,5,0">календарю?</TextBlock>
+            </StackPanel>
         </StackPanel>
+        
     </Grid>
 </Window>

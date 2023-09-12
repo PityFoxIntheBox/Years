@@ -29,6 +29,11 @@ namespace Years
         {
             MessageBox.Show("Вводимый формат даты ДД.ММ.ГГГГ");
         }
+        /*private void Slav(object sender, RoutedEventArgs e)
+        {
+            DateTime birthDate = (DateTime)BirthDate.SelectedDate;
+
+        }*/
         private void Calculate_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -38,6 +43,7 @@ namespace Years
                 AmountTime(birthDate, today);
                 DayWeek(birthDate, today);
                 LeapYears(birthDate, today);
+                Calendar.Visibility = Visibility.Visible;
             }
             catch (Exception ex)
             {
