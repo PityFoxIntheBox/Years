@@ -29,11 +29,78 @@ namespace Years
         {
             MessageBox.Show("Вводимый формат даты ДД.ММ.ГГГГ");
         }
-        /*private void Slav(object sender, RoutedEventArgs e)
+        private void Slav_Click(object sender, RoutedEventArgs e)
         {
             DateTime birthDate = (DateTime)BirthDate.SelectedDate;
-
-        }*/
+            if ((birthDate.Day >= 24 && birthDate.Month == 12) || (birthDate.Day >= 01 && birthDate.Day <= 30 && birthDate.Month == 01))
+            {
+                CalendarResult.Text = "Ваш знак по древанеславянскому календарю - Мороз";
+            }
+            else if ((birthDate.Day == 31 && birthDate.Month == 01) || (birthDate.Month == 02))
+            {
+                CalendarResult.Text = "Ваш знак по древанеславянскому календарю - Велес";
+            }
+            else if (birthDate.Month == 03)
+            {
+                CalendarResult.Text = "Ваш знак по древанеславянскому календарю - Макошь";
+            }
+            else if (birthDate.Month == 04)
+            {
+                CalendarResult.Text = "Ваш знак по древанеславянскому календарю - Жива";
+            }
+            else if (birthDate.Month == 05 && birthDate.Day >= 01 && birthDate.Day <= 14)
+            {
+                CalendarResult.Text = "Ваш знак по древанеславянскому календарю - Ярило";
+            }
+            else if ((birthDate.Month == 05 && birthDate.Day >= 15) || (birthDate.Month == 06 && birthDate.Day >= 1 && birthDate.Day <= 2))
+            {
+                CalendarResult.Text = "Ваш знак по древанеславянскому календарю - Леля";
+            }
+            else if (birthDate.Month == 06 && birthDate.Day >= 3 && birthDate.Day <= 12)
+            {
+                CalendarResult.Text = "Ваш знак по древанеславянскому календарю - Кострома";
+            }
+            else if ((birthDate.Month == 06 && birthDate.Day >= 13 && birthDate.Day <= 23 || birthDate.Day >= 25) || (birthDate.Month == 07 && birthDate.Day <= 6))
+            {
+                CalendarResult.Text = "Ваш знак по древанеславянскому календарю - Додола";
+            }
+            else if (birthDate.Month == 06 && birthDate.Day == 24)
+            {
+                CalendarResult.Text = "Ваш знак по древанеславянскому календарю - Иван Купала";
+            }
+            else if (birthDate.Month == 07 && birthDate.Day >= 7 && birthDate.Day <= 31)
+            {
+                CalendarResult.Text = "Ваш знак по древанеславянскому календарю - Лада";
+            }
+            else if (birthDate.Month == 08 && birthDate.Day <= 28)
+            {
+                CalendarResult.Text = "Ваш знак по древанеславянскому календарю - Перун";
+            }
+            else if ((birthDate.Month == 08 && birthDate.Day >= 29) || (birthDate.Month == 09 && birthDate.Day <= 13))
+            {
+                CalendarResult.Text = "Ваш знак по древанеславянскому календарю - Сева";
+            }
+            else if (birthDate.Month == 09 && birthDate.Day >= 14 && birthDate.Day <= 27)
+            {
+                CalendarResult.Text = "Ваш знак по древанеславянскому календарю - Рожаница";
+            }
+            else if ((birthDate.Month == 09 && birthDate.Day >= 28) || (birthDate.Month == 10 && birthDate.Day <= 15))
+            {
+                CalendarResult.Text = "Ваш знак по древанеславянскому календарю - Сварожичи";
+            }
+            else if ((birthDate.Month == 10 && birthDate.Day >= 16) || (birthDate.Month == 11 && birthDate.Day <= 8))
+            {
+                CalendarResult.Text = "Ваш знак по древанеславянскому календарю - Морена";
+            }
+            else if (birthDate.Month == 11 && birthDate.Day >= 9 && birthDate.Day <= 28)
+            {
+                CalendarResult.Text = "Ваш знак по древанеславянскому календарю - Зима";
+            }
+            else
+            {
+                CalendarResult.Text = "Ваш знак по древанеславянскому календарю - Карачун";
+            }
+        }  
         private void Calculate_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -108,6 +175,11 @@ namespace Years
             }
             AmountLeaps.Text = amountLeapYears.ToString();
             Leaps.ItemsSource = years;
+        }
+
+        private void East_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
