@@ -100,7 +100,54 @@ namespace Years
             {
                 CalendarResult.Text = "Ваш знак по древанеславянскому календарю - Карачун";
             }
-        }  
+        }
+        private void East_Click(object sender, RoutedEventArgs e)
+        {
+            DateTime birthDate = (DateTime)BirthDate.SelectedDate;
+            int rem = birthDate.Year % 12;
+            switch(rem)
+            {
+                case 4:
+                    CalendarResult.Text = "Ваш знак по восточному календарю - крыса";
+                    break;
+                case 5:
+                    CalendarResult.Text = "Ваш знак по восточному календарю - бык";
+                    break;
+                case 6:
+                    CalendarResult.Text = "Ваш знак по восточному календарю - тигр";
+                    break;
+                case 7:
+                    CalendarResult.Text = "Ваш знак по восточному календарю - кролик";
+                    break;
+                case 8:
+                    CalendarResult.Text = "Ваш знак по восточному календарю - дракон";
+                    break;
+                case 9:
+                    CalendarResult.Text = "Ваш знак по восточному календарю - змея";
+                    break;
+                case 10:
+                    CalendarResult.Text = "Ваш знак по восточному календарю - лошадь";
+                    break;
+                case 11:
+                    CalendarResult.Text = "Ваш знак по восточному календарю - овца";
+                    break;
+                case 0:
+                    CalendarResult.Text = "Ваш знак по восточному календарю - обезьяна";
+                    break;
+                case 1:
+                    CalendarResult.Text = "Ваш знак по восточному календарю - петух";
+                    break;
+                case 2:
+                    CalendarResult.Text = "Ваш знак по восточному календарю - собака";
+                    break;
+                case 3:
+                    CalendarResult.Text = "Ваш знак по восточному календарю - свинья";
+                    break;
+                default:
+                    break;
+
+            }
+        }
         private void Calculate_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -177,9 +224,6 @@ namespace Years
             Leaps.ItemsSource = years;
         }
 
-        private void East_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
     }
 }
